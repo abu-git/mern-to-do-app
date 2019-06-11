@@ -55,7 +55,7 @@ class Edit extends Component{
 				owner: this.state.owner
 			};
 
-			axios.post('http://localhost:3001/users/dashboard/update', newTask)
+			axios.post('/users/dashboard/update', newTask)
 				.then(res =>{
 					//console.log("task updated");
 					this.props.history.push({
@@ -74,7 +74,7 @@ class Edit extends Component{
 		if(!taskID){
 			this.props.history.push('/login');
 		}else{
-			axios.get('http://localhost:3001/users/dashboard/update/', { params: {data: taskID}})
+			axios.get('/users/dashboard/update/', { params: {data: taskID}})
 				.then( res =>{
 					//console.log(res.data);
 					this.setState({

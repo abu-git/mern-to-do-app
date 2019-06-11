@@ -47,7 +47,7 @@ class Login extends Component{
 				password: this.state.password
 			};
 
-			axios.post('http://localhost:3001/users/login', newUser)
+			axios.post('/users/login', newUser)
 				.then(res => {
 					authCentralState.authenticate(() =>	{
 						this.setState({ redirectToReferrer: true })

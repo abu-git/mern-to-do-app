@@ -37,7 +37,7 @@ class StatusUpdate extends Component{
 			deadline: this.state.deadline
 		};
 
-		axios.post('http://localhost:3001/users/dashboard/status', updatedTask)
+		axios.post('/users/dashboard/status', updatedTask)
 			.then(res => {
 				this.props.history.push({
 					pathname: '/dashboard',
@@ -55,7 +55,7 @@ class StatusUpdate extends Component{
 			this.props.history.push('/login');
 		}else{
 			this.setState({ redirectToReferrer: true });
-			axios.get('http://localhost:3001/users/dashboard/status', { params: { data: taskID }})
+			axios.get('/users/dashboard/status', { params: { data: taskID }})
 				.then(res =>{
 					console.log(res.data);
 					this.setState({

@@ -72,7 +72,7 @@ class Register extends Component{
 			password2: this.state.password2
 		}
 		if(validate){
-			axios.post('http://localhost:3001/users/register', newUser)
+			axios.post('/users/register', newUser)
 				.then(res => {
 					this.props.history.push({
 						pathname: '/login',

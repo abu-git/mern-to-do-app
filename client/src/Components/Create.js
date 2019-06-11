@@ -56,7 +56,7 @@ class Create extends Component{
 				owner: this.state.owner
 			};
 			//post to backend for saving
-			axios.post('http://localhost:3001/users/add', newTask)
+			axios.post('/users/add', newTask)
 				.then(res =>{
 					this.props.history.push({
 						pathname: '/dashboard',

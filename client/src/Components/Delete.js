@@ -29,7 +29,7 @@ class Delete extends Component{
 	onClick = e =>{
 		e.preventDefault();
 
-		axios.get('http://localhost:3001/users/dashboard/delete/'+this.state._id, {params: {data: this.state._id}})
+		axios.get('/users/dashboard/delete/'+this.state._id, {params: {data: this.state._id}})
 			.then(() => {
 				this.setState({
 					alert: "DELETED"
@@ -46,7 +46,7 @@ class Delete extends Component{
 			this.props.history.push('/login');
 		}else{
 			this.setState({ redirectToReferrer: true });
-			axios.get('http://localhost:3001/users/dashboard/delete', { params: {data: taskID} })
+			axios.get('/users/dashboard/delete', { params: {data: taskID} })
 				.then(res => {
 					this.setState({
 						_id: res.data._id,

@@ -79,7 +79,7 @@ class Dashboard extends Component{
 		var { stateRedirect } = this.props.location;
 		this.setState({ redirectToReferrer: stateRedirect});
 		
-		axios.get('http://localhost:3001/users/dashboard/', { params: {data : data}} )
+		axios.get('/users/dashboard/', { params: {data : data}} )
 			.then(res =>{
 				this.setState({ tasks: res.data, taskCheck: true });
 				console.log(this.state.tasks);
