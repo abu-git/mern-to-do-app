@@ -1,0 +1,33 @@
+{
+  "name": "refactor-task-21",
+  "version": "1.0.0",
+  "description": "simple TO-DO application",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 10000 || true",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "server": "nodemon server.js",
+    "concurrently": "concurrently \"node server.js\" \"cd client && npm start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "mongoose": "^5.5.13",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "prettier": "1.18.2"
+  }
+}
